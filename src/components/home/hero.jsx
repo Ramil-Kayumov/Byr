@@ -1,3 +1,6 @@
+import quality from '../../assets/icons/quality.png'
+import price from '../../assets/icons/price.png'
+import expiriens from '../../assets/icons/expiriens.png'
 
 
 const Hero =()=>{
@@ -28,6 +31,30 @@ const Hero =()=>{
         </div>
       </div>
 
+      <section className="my-container flex items-center justify-center">
+        <div className="w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9]  p-[20px] pr-12 pb-8 flex justify-center items-start gap-8">
+          <img src={quality} alt="" />
+          <div className="font-semibold">
+            <h2 className='text-2xl mb-4'>Высокое качество</h2>
+            <p className='text-[#878282] w-[241px]'>Мы используем только современные оборудование, а наши специалисты строго соблюдают технологии бурения</p>
+          </div>
+        </div>
+        <div className="w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9]  p-[20px] pr-12 pb-8 flex justify-center items-start gap-8">
+          <img src={expiriens} alt="" />
+          <div className="font-semibold">
+            <h2 className='text-2xl mb-4'>Большой опыт</h2>
+            <p className='text-[#878282] w-[241px]'>Наши специалисты успешно реализовали множество проектов различной сложности и накопили богатый опыт</p>
+          </div>
+        </div>
+        <div className="w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9]  p-[20px] pr-12 pb-8 flex justify-center items-start gap-8">
+          <img src={price} alt="" />
+          <div className="font-semibold">
+            <h2 className='text-2xl mb-4'>Честные цены</h2>
+            <p className='text-[#878282] w-[241px]'>Мы предлагаем прозрачную систему ценообразования, без скрытых платежей и наценок</p>
+          </div>
+        </div>
+        
+      </section>
     </section>
     )
 }

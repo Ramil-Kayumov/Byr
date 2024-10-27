@@ -1,10 +1,15 @@
-import img from '../assets/img/hero.png'
+
 import Hero from './home/hero';
+import Slider from './home/slider';
 
 
 const Home = () => {
   return (
-    <Hero/>
+    <>
+     <Hero/>
+     <Slider/>
+    </>
+  
   );
 };
 export default Home;
