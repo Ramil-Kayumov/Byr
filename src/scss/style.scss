@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+
+$font:  "Tektur", sans-serif;
+
+*{
+    font-family: $font;
+}
+
+.my-container{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+header{
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+}
