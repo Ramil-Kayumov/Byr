@@ -49,7 +49,7 @@ const Slider = () => {
             <h2 className="text-[56px]">НАШИ УСЛУГИ</h2>
             <div className="flex items-center gap-2">
               <div className="cursor-pointer">
-                <a href="#" className="text-[#55A4FF] ">
+                <a href="\services" className="text-[#55A4FF] ">
                   Смотреть все
                 </a>
                 <div className="w-[109px] h-[1px] bg-[#55A4FF]"></div>
@@ -60,9 +60,9 @@ const Slider = () => {
           </div>
         </div>
         <Swiper
-          className="h-[630px] pt-[40px] pl-[330px] max-w-[1840px]"
+          className="h-[630px] pt-[40px] pl-[130px] "
           spaceBetween={-50}
-          slidesPerView={3}
+          slidesPerView={2}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >

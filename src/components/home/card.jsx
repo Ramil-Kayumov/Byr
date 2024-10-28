@@ -1,4 +1,4 @@
-import card from "../../assets/img/card1.png";
+
 
 function Card(props)  {
   return (
