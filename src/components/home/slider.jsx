@@ -60,25 +60,26 @@ const Slider = () => {
           </div>
         </div>
         <Swiper
-          className="h-[630px] pt-[40px] pl-[130px] "
-          spaceBetween={-50}
-          slidesPerView={2}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <SwiperSlide>
-            <Card brand={cardInfo1} />
-          </SwiperSlide>
-          <SwiperSlide>
-          <Card brand={cardInfo2} />
-          </SwiperSlide>
-          <SwiperSlide>
-          <Card brand={cardInfo3} />
-          </SwiperSlide>
-          <SwiperSlide>
-          <Card brand={cardInfo4} />
-          </SwiperSlide>
-        </Swiper>
+  className="h-[630px] pt-[40px] flex justify-center my-container pl-[150px]"
+  spaceBetween={230} // Установите отступ между карточками на 0
+  slidesPerView={3}
+  loop={true}
+  onSlideChange={() => console.log("slide change")}
+  onSwiper={(swiper) => console.log(swiper)}
+>
+  <SwiperSlide className="flex justify-center "> 
+    <Card brand={cardInfo1} />
+  </SwiperSlide>
+  <SwiperSlide className="flex justify-center "> 
+    <Card brand={cardInfo2} />
+  </SwiperSlide>
+  <SwiperSlide className="flex justify-center ">
+    <Card brand={cardInfo3} />
+  </SwiperSlide>
+  <SwiperSlide className="flex justify-center "> 
+    <Card brand={cardInfo4} />
+  </SwiperSlide>
+</Swiper>
       </section>
     </>
   );

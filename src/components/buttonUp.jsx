@@ -34,7 +34,7 @@ const ScrollToTopButton = () => {
         onClick={scrollToTop} 
         className="fixed bottom-5 right-5 p-2 text-lg bg-[#F7A539] text-white rounded-full shadow-lg w-[60px] h-[60px] flex items-center justify-center z-20"
       >
-        <img src={arrow} alt="" />
+        <img src={arrow} alt=""  className='z-[21]'/>
       </button>
     )}
   </div>
