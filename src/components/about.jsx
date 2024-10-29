@@ -13,7 +13,7 @@ const About = () => {
         </a>{" "}
         / <span className="text-[#848484]">О нас</span>
       </div>
-      <div className="flex flex-col md:flex-row mt-[100px] gap-[42px]">
+      <div className="flex flex-col md:flex-row mt-[100px] mb-[-80px] gap-[42px]">
         <div className="w-full md:w-[608px] grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-x-[48px] gap-y-0">
           <div className="h-[375px] col-start-1 row-start-1 col-end-2 row-end-3 rounded-[20px]">
             <img

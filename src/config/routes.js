@@ -32,7 +32,17 @@ export const publicRoutes=[
         name:'Новости',
         path:'/news',
         component: News
-    }
+    },
+    {
+        
+        path:'/profile',
+        component: Profile
+    },
+    {
+        
+        path:'/admin',
+        component: Admin
+    },
 ];
 export const User=[
     {

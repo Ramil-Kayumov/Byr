@@ -1,9 +1,9 @@
-
+import {motion} from 'framer-motion'
 
 function Card(props)  {
   return (
     <>
-      <div className="w-[413px] h-[566px] bg-white my-shadow absolute rounded-2xl">
+      <div className="w-[413px] h-[566px] bg-white my-shadow relative rounded-2xl">
         <div className="w-[77px] h-[77px] bg-white rounded-full my-shadow flex items-center justify-center text-[#878282] font-semibold text-4xl relative top-[-33px] left-[-33px]">
         { props.brand.number }
         </div>
@@ -22,9 +22,9 @@ function Card(props)  {
           <p className="mb-3 font-medium w-[325px]">
           { props.brand.text }
           </p>
-          <button className="w-[168px] h-[61px] bg-[#F7A539] text-white rounded-[20px] text-xl font-semibold">
+          <motion.button whileHover={{scale:1.1}} className="w-[168px] h-[61px] bg-[#F7A539] text-white rounded-[20px] text-xl font-semibold">
             Заказать
-          </button>
+          </motion.button>
         </div>
       </div>
     </>

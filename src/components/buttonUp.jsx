@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import {motion} from 'framer-motion'
 import arrow from '../assets/icons/ArrowUp.png'
 
 const ScrollToTopButton = () => {
@@ -28,7 +28,7 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <div>
+    <motion.div whileHover={{y:-15}}>
     {isVisible && (
       <button 
         onClick={scrollToTop} 
@@ -37,7 +37,7 @@ const ScrollToTopButton = () => {
         <img src={arrow} alt=""  className='z-[21]'/>
       </button>
     )}
-  </div>
+  </motion.div>
   );
 };
 

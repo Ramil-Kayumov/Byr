@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
+import {motion} from 'framer-motion'
 
 const Footer = () => {
     const canvasRef = useRef(null);
@@ -171,7 +171,11 @@ const Footer = () => {
         <div className="relative">
             <footer className="relative h-72 text-white">
                 <canvas id="canvas" ref={canvasRef} className="absolute inset-0 w-full h-full" />
-                <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold mt-[150px]">БурИнформ</div>
+                <div className="my-container absolute pt-[200px] inset-0 flex items-center justify-between text-2xl font-bold">
+                    <p className='font-medium text-xl'>+7 800 550-98-04</p>
+                    <motion.a whileHover={{scale:1.1}} href="\">БурИнформ</motion.a>
+                    <p className='text-[#F7A539] font-medium text-xl'>ByrMoscow@mail.ru</p>
+                </div>
             </footer>
         </div>
     );
