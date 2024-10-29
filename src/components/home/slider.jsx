@@ -44,26 +44,40 @@ const Slider = () => {
   return (
     <>
       <section className="bg-[#F2F2F2] h-[912px] mt-14">
-        <div className="my-container">
-          <div className="flex justify-between pt-14  font-semibold mb-10">
-            <h2 className="text-[56px]">НАШИ УСЛУГИ</h2>
-            <div className="flex items-center gap-2">
-              <div className="cursor-pointer">
-                <a href="\services" className="text-[#55A4FF] ">
-                  Смотреть все
-                </a>
-                <div className="w-[109px] h-[1px] bg-[#55A4FF]"></div>
-              </div>
-
-              <img src={arrow} alt="" className="w-[34px]" />
-            </div>
-          </div>
+      <div className="my-container">
+    <div className="flex flex-col md:flex-row justify-between pt-14 font-semibold mb-10">
+      <h2 className="text-[40px] md:text-[56px]">НАШИ УСЛУГИ</h2>
+      <a href="\services" className="flex items-center gap-2 cursor-pointer">
+        <div className="">
+          <a href="\services" className="text-[#55A4FF]">
+            Смотреть все
+          </a>
+          <div className=" md:w-[109px] h-[1px] bg-[#55A4FF]"></div>
         </div>
+        <img src={arrow} alt="" className="w-[24px] md:w-[34px]" />
+      </a>
+    </div>
+  </div>
         <Swiper
-  className="h-[630px] pt-[40px] flex justify-center my-container pl-[150px]"
-  spaceBetween={230} // Установите отступ между карточками на 0
-  slidesPerView={3}
+  className="h-auto pt-[40px]  md:h-[630px] flex justify-center my-container  md:pl-[150px]"
+  spaceBetween={230} 
+  breakpoints={{
+    470: {
+      slidesPerView: 1, // Для мобильных устройств
+    },
+    640: {
+      slidesPerView: 2, // Для небольших планшетов
+    },
+    768: {
+      slidesPerView: 2, // Для больших планшетов
+    },
+    1024:{
+      slidesPerView:3
+    }
+    
+  }}
   loop={true}
+ 
   onSlideChange={() => console.log("slide change")}
   onSwiper={(swiper) => console.log(swiper)}
 >

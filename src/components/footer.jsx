@@ -1,31 +1,31 @@
-import React, { useEffect, useRef } from 'react';
-import {motion} from 'framer-motion'
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
-    const canvasRef = useRef(null);
+  const canvasRef = useRef(null);
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const gl = canvas.getContext("webgl");
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const gl = canvas.getContext("webgl");
 
-        if (!gl) {
-            console.error("WebGL не поддерживается в этом браузере.");
-            return;
-        }
+    if (!gl) {
+      console.error("WebGL не поддерживается в этом браузере.");
+      return;
+    }
 
-        // Устанавливаем размер canvas
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    // Устанавливаем размер canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-        // Получаем код шейдеров
-        const vertexShaderSource = `
+    // Получаем код шейдеров
+    const vertexShaderSource = `
             attribute vec4 position;
             void main() {
                 gl_Position = position;
             }
         `;
 
-        const fragmentShaderSource = `
+    const fragmentShaderSource = `
             #ifdef GL_FRAGMENT_PRECISION_HIGH
             precision highp float;
             #else
@@ -81,104 +81,124 @@ const Footer = () => {
             }
         `;
 
-        // Функция для компиляции шейдера
-        const compileShader = (source, type) => {
-            const shader = gl.createShader(type);
-            gl.shaderSource(shader, source);
-            gl.compileShader(shader);
-            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-                console.error("Ошибка компиляции шейдера:", gl.getShaderInfoLog(shader));
-                gl.deleteShader(shader);
-                return null;
-            }
-            return shader;
-        };
+    // Функция для компиляции шейдера
+    const compileShader = (source, type) => {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error(
+          "Ошибка компиляции шейдера:",
+          gl.getShaderInfoLog(shader)
+        );
+        gl.deleteShader(shader);
+        return null;
+      }
+      return shader;
+    };
 
-        // Создание шейдерной программы
-        const createProgram = (vertexShaderSource, fragmentShaderSource) => {
-            const vertexShader = compileShader(vertexShaderSource, gl.VERTEX_SHADER);
-            const fragmentShader = compileShader(fragmentShaderSource, gl.FRAGMENT_SHADER);
+    // Создание шейдерной программы
+    const createProgram = (vertexShaderSource, fragmentShaderSource) => {
+      const vertexShader = compileShader(vertexShaderSource, gl.VERTEX_SHADER);
+      const fragmentShader = compileShader(
+        fragmentShaderSource,
+        gl.FRAGMENT_SHADER
+      );
 
-            const program = gl.createProgram();
-            gl.attachShader(program, vertexShader);
-            gl.attachShader(program, fragmentShader);
-            gl.linkProgram(program);
+      const program = gl.createProgram();
+      gl.attachShader(program, vertexShader);
+      gl.attachShader(program, fragmentShader);
+      gl.linkProgram(program);
 
-            if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-                console.error("Ошибка связывания программы:", gl.getProgramInfoLog(program));
-                return null;
-            }
-            return program;
-        };
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error(
+          "Ошибка связывания программы:",
+          gl.getProgramInfoLog(program)
+        );
+        return null;
+      }
+      return program;
+    };
 
-        const program = createProgram(vertexShaderSource, fragmentShaderSource);
-        if (!program) {
-            console.error("Не удалось создать программу шейдеров.");
-            return;
-        }
+    const program = createProgram(vertexShaderSource, fragmentShaderSource);
+    if (!program) {
+      console.error("Не удалось создать программу шейдеров.");
+      return;
+    }
 
-        gl.useProgram(program);
+    gl.useProgram(program);
 
-        // Установка атрибута позиции
-        const positionAttributeLocation = gl.getAttribLocation(program, "position");
-        const positionBuffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-            -1, -1,
-             1, -1,
-            -1,  1,
-            -1,  1,
-             1, -1,
-             1,  1,
-        ]), gl.STATIC_DRAW);
-
-        gl.enableVertexAttribArray(positionAttributeLocation);
-        gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
-
-        // Настройка uniform-переменных
-        const resolutionUniformLocation = gl.getUniformLocation(program, "u_resolution");
-        const timeUniformLocation = gl.getUniformLocation(program, "u_time");
-
-        // Функция для обновления рендера
-        const render = (time) => {
-            time *= 0.001; // переводим миллисекунды в секунды
-
-            // Устанавливаем размеры и время
-            gl.uniform2f(resolutionUniformLocation, canvas.width, canvas.height);
-            gl.uniform1f(timeUniformLocation, time);
-
-            // Очищаем canvas
-            gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
-            gl.clearColor(0, 0, 0, 1);
-            gl.clear(gl.COLOR_BUFFER_BIT);
-
-            // Рисуем
-            gl.drawArrays(gl.TRIANGLES, 0, 6);
-
-            requestAnimationFrame(render);
-        };
-        requestAnimationFrame(render);
-
-        // Обновляем canvas при изменении размера окна
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-    }, []);
-
-    return (
-        <div className="relative">
-            <footer className="relative h-72 text-white">
-                <canvas id="canvas" ref={canvasRef} className="absolute inset-0 w-full h-full" />
-                <div className="my-container absolute pt-[200px] inset-0 flex items-center justify-between text-2xl font-bold">
-                    <p className='font-medium text-xl'>+7 800 550-98-04</p>
-                    <motion.a whileHover={{scale:1.1}} href="\">БурИнформ</motion.a>
-                    <p className='text-[#F7A539] font-medium text-xl'>ByrMoscow@mail.ru</p>
-                </div>
-            </footer>
-        </div>
+    // Установка атрибута позиции
+    const positionAttributeLocation = gl.getAttribLocation(program, "position");
+    const positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
+      gl.STATIC_DRAW
     );
+
+    gl.enableVertexAttribArray(positionAttributeLocation);
+    gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+    // Настройка uniform-переменных
+    const resolutionUniformLocation = gl.getUniformLocation(
+      program,
+      "u_resolution"
+    );
+    const timeUniformLocation = gl.getUniformLocation(program, "u_time");
+
+    // Функция для обновления рендера
+    const render = (time) => {
+      time *= 0.001; // переводим миллисекунды в секунды
+
+      // Устанавливаем размеры и время
+      gl.uniform2f(resolutionUniformLocation, canvas.width, canvas.height);
+      gl.uniform1f(timeUniformLocation, time);
+
+      // Очищаем canvas
+      gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+      gl.clearColor(0, 0, 0, 1);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+
+      // Рисуем
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+      requestAnimationFrame(render);
+    };
+    requestAnimationFrame(render);
+
+    // Обновляем canvas при изменении размера окна
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  }, []);
+
+  return (
+    <div className="relative">
+      <footer className="relative h-72 text-white bg-gray-800">
+        <canvas
+          id="canvas"
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full"
+        />
+        <div className="my-container absolute inset-0 flex flex-col md:flex-row items-center justify-between text-2xl font-bold pt-[200px]  p-12 ">
+          <p className="font-medium text-xl">+7 800 550-98-04</p>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            href="/"
+            className="text-center md:mb-0"
+          >
+            БурИнформ
+          </motion.a>
+          <p className="text-[#F7A539] font-medium text-xl">
+            ByrMoscow@mail.ru
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
 };
 
 export default Footer;

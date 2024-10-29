@@ -10,10 +10,10 @@ const Reviews = ()=>{
       
       };
     return(
-        <div className="container m-auto">
+        <div className="my-container m-auto">
             <section>
-                <h2 className="text-[56px] font-semibold mt-[60px]">НАШИ КЛИЕНТЫ О НАС</h2>
-                <div className="flex items-center justify-center mt-[45px] gap-[43px] ">
+                <h2 className=" text-[40px] lg:text-[56px] font-semibold mt-[60px]">НАШИ КЛИЕНТЫ О НАС</h2>
+                <div className="flex flex-col lg:flex-row items-center justify-center mt-[45px] gap-[43px] ">
                     <Otziv brand={ OtzivInfo1}/>
                     <Otziv brand={ OtzivInfo1}/>
                     <Otziv brand={ OtzivInfo1}/>

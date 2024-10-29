@@ -46,7 +46,7 @@ const Header = () => {
         <div className="my-container flex justify-between items-center pt-7">
           <div className="flex gap-6 font-semibold">
             {/* Бургер-меню для мобильных устройств */}
-            <button onClick={toggleMenu} className="md:hidden">
+            <button onClick={toggleMenu} className="lg:hidden">
               <span className="block w-6 h-0.5 bg-black mb-1"></span>
               <span className="block w-6 h-0.5 bg-black mb-1"></span>
               <span className="block w-6 h-0.5 bg-black"></span>
@@ -54,7 +54,7 @@ const Header = () => {
 
             {/* Меню для мобильных устройств */}
             {isMenuOpen && (
-              <div className="absolute top-[90px] left-0 right-0 bg-white shadow-lg z-20">
+              <div className="h-[420px] absolute top-[90px] left-0 right-0 bg-white shadow-lg z-20">
                 {publicRoutes.map((el, i) => (
                   <Link key={i} to={el.path} className="block p-4 border-b">
                     {el.name}
@@ -63,7 +63,7 @@ const Header = () => {
                 {/* Кнопка регистрации также скрыта на мобильных устройствах */}
                 <a
                   onClick={handleRegisterOpen}
-                  className="block p-4 border-b cursor-pointer w-full text-center text-sm h-[41px] bg-[#F7A539] rounded-lg text-white"
+                  className="flex items-center justify-center p-4 border- cursor-pointer w-full text-center text-sm h-[41px] bg-[#F7A539] rounded-lg text-white"
                 >
                   Зарегистрироваться
                 </a>
@@ -71,7 +71,7 @@ const Header = () => {
             )}
 
             {/* Меню для десктопов */}
-            <div className="hidden md:flex gap-6">
+            <div className="hidden lg:flex gap-6">
               {publicRoutes.map((el, i) => (
                 <Link key={i} to={el.path}>
                   <motion.p 
