@@ -58,7 +58,7 @@ const Profile = () => {
           <p className="font-medium text-lg text-[#797979]">Заказчик</p>
         </div>
       </div>
-      <div className="mt-[60px] mb-5 flex items-center justify-between">
+      <div className="ml-[30px] md:ml-0 mt-[60px] mb-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-1">
           <p className="text-2xl font-medium">Ваши заказы</p>
           <img src={arrow_right} alt="" />
@@ -71,9 +71,23 @@ const Profile = () => {
         </a>
       </div>
       <Swiper
-        className="h-[630px] pt-[40px] flex justify-center my-container pl-[150px]"
+        className="h-[630px] pt-[40px] flex justify-center my-container pl-[20px]  md:pl-[150px]"
         spaceBetween={230}
-        slidesPerView={3}
+        breakpoints={{
+          470: {
+            slidesPerView: 1, // Для мобильных устройств
+          },
+          640: {
+            slidesPerView: 2, // Для небольших планшетов
+          },
+          768: {
+            slidesPerView: 2, // Для больших планшетов
+          },
+          1024:{
+            slidesPerView:3
+          }
+          
+        }}
         
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
@@ -92,7 +106,7 @@ const Profile = () => {
         </SwiperSlide>
       </Swiper>
       <div className="mt-[60px] flex items-center justify-center">
-        <div className="w-[569px] h-[80px] bg-[#EEEEEE] rounded-[20px] flex items-center justify-center font-bold text-2xl">Общая стоимость ≈ 27800 рублей</div>
+        <div className="w-[569px] h-[80px] bg-[#EEEEEE] rounded-[20px] text-center flex items-center justify-center font-bold text-2xl">Общая стоимость ≈ 27800 рублей</div>
       </div>
     </section>
   );

@@ -48,13 +48,28 @@ const Services = () => {
         / <span className="text-[#848484]">Услуги</span>
       </div>
       <div className="flex gap-5 items-center mt-3 mb-5">
-        <h2 className="text-[54px] font-bold">Самые популярные услуги </h2>
+        <h2 className="text-[32px] md:text-[54px] font-bold">Самые популярные услуги </h2>
         <img src={trend} alt="" className="w-[61px] h-[61px]" />
       </div>
       <Swiper
-        className="h-[630px] pt-[40px]  flex justify-center my-container pl-[150px]"
+        className="h-[630px] pt-[40px]  flex justify-center my-container pl-[20px]  md:pl-[150px]"
         spaceBetween={230} // Установите отступ между карточками на 0
-        slidesPerView={3}
+        breakpoints={{
+          470: {
+            slidesPerView: 1, // Для мобильных устройств
+          },
+          640: {
+            slidesPerView: 2, // Для небольших планшетов
+          },
+          768: {
+            slidesPerView: 2, // Для больших планшетов
+          },
+          1024:{
+            slidesPerView:3
+          }
+          
+        }}
+        loop={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -71,11 +86,26 @@ const Services = () => {
           <Card brand={cardInfo4} />
         </SwiperSlide>
       </Swiper>
-      <h2 className="text-[54px] font-bold mt-[60px] mb-5">Услуги до 15000 рублей</h2>
+      <h2 className="text-[32px] md:text-[54px] font-bold mt-[60px] mb-5">Услуги до 15000 рублей</h2>
       <Swiper
-        className="h-[630px] pt-[40px]  flex justify-center my-container pl-[150px]"
+        className="h-[630px] pt-[40px]  flex justify-center my-container pl-[20px]  md:pl-[150px]"
         spaceBetween={230} // Установите отступ между карточками на 0
-        slidesPerView={3}
+        breakpoints={{
+          470: {
+            slidesPerView: 1, // Для мобильных устройств
+          },
+          640: {
+            slidesPerView: 2, // Для небольших планшетов
+          },
+          768: {
+            slidesPerView: 2, // Для больших планшетов
+          },
+          1024:{
+            slidesPerView:3
+          }
+          
+        }}
+        loop={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -92,11 +122,26 @@ const Services = () => {
           <Card brand={cardInfo4} />
         </SwiperSlide>
       </Swiper>
-      <h2 className="text-[54px] font-bold mt-[60px] mb-5">Услуги более 15000 рублей</h2>
+      <h2 className="text-[32px] md:text-[54px] font-bold mt-[60px] mb-5">Услуги более 15000 рублей</h2>
       <Swiper
-        className="h-[630px] pt-[40px]  flex justify-center my-container pl-[150px]"
+        className="h-[630px] pt-[40px]  flex justify-center my-container pl-[20px]  md:pl-[150px]"
         spaceBetween={230} // Установите отступ между карточками на 0
-        slidesPerView={3}
+        breakpoints={{
+          470: {
+            slidesPerView: 1, // Для мобильных устройств
+          },
+          640: {
+            slidesPerView: 2, // Для небольших планшетов
+          },
+          768: {
+            slidesPerView: 2, // Для больших планшетов
+          },
+          1024:{
+            slidesPerView:3
+          }
+          
+        }}
+        loop={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
