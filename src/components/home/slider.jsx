@@ -8,8 +8,9 @@ import arrow from "../../assets/icons/arrow.png";
 import card from "../../assets/img/card1.png";
 import card2 from "../../assets/img/card2.png";
 import card3 from "../../assets/img/card3.png";
+import card4 from '../../assets/img/card4.jpg'
 
-
+import {motion} from 'framer-motion'
 
 const Slider = () => {
   const cardInfo1 = {
@@ -36,7 +37,7 @@ const Slider = () => {
   const cardInfo4 = {
     number: "04",
     header: "Бурение скважин на воду",
-    img: card,
+    img: card4,
     price: "2000",
     text: "Бурение скважин на песок и артезианские воды для частных домов, коттеджных посёлков, промышленных объектов.",
   };
@@ -47,15 +48,15 @@ const Slider = () => {
       <div className="my-container">
     <div className="flex flex-col md:flex-row justify-between pt-14 font-semibold mb-10">
       <h2 className="text-[40px] md:text-[56px]">НАШИ УСЛУГИ</h2>
-      <a href="\services" className="flex items-center gap-2 cursor-pointer">
-        <div className="">
+      <motion.a whileHover={{scale:1.1}} whileFocus={{scale:1.1}} href="\services" className="flex items-center gap-2 cursor-pointer">
+        <div>
           <a href="\services" className="text-[#55A4FF]">
             Смотреть все
           </a>
           <div className=" md:w-[109px] h-[1px] bg-[#55A4FF]"></div>
         </div>
         <img src={arrow} alt="" className="w-[24px] md:w-[34px]" />
-      </a>
+      </motion.a>
     </div>
   </div>
         <Swiper

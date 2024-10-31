@@ -2,9 +2,13 @@ import quality from "../../assets/icons/quality.png";
 import price from "../../assets/icons/price.png";
 import expiriens from "../../assets/icons/expiriens.png";
 
+import {motion} from 'framer-motion'
+
 const Hero = () => {
   return (
-    <section>
+    <motion.section initial={{ opacity: 0 }} // Начальное положение и прозрачность
+    animate={{ opacity: 1 }} // Конечное положение и полная видимость
+    transition={{ duration: 1 }}>
       <div className="bg-[url('./assets/img/hero.png')] w-full h-[680px] bg-no-repeat bg-cover bg-bottom pt-[96px] lg:h-[546px]">
         <div className="my-container flex flex-row gap-5">
           <div className="w-[71px] h-[390px] border-[#F7A539] border-s-4 border-y-4 rounded-lg mt-1 lg:h-[351px]"></div>
@@ -25,15 +29,15 @@ const Hero = () => {
               индивидуальный подход к каждому клиенту - гарантия безупречного
               результата.
             </p>
-            <button className="bg-[#F7A539] h-[60px] md:h-[74px] w-full md:w-[458px] rounded-3xl text-xl md:text-2xl">
+            <motion.button whileHover={{scale:1.1}} className="bg-[#F7A539] h-[60px] md:h-[74px] w-full md:w-[458px] rounded-3xl text-xl md:text-2xl">
               Заказать консультацию
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
 
       <section className="my-container flex flex-col md:flex-row items-center justify-center ">
-        <div className="w-full md:w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9] p-[20px] flex items-center gap-4">
+        <div  className="w-full md:w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9] p-[20px] flex items-center gap-4">
           <img src={quality} alt="Высокое качество" className="w-[50px] h-[50px]" />
           <div className="font-semibold">
             <h2 className="text-xl lg:text-2xl mb-2">Высокое качество</h2>
@@ -43,7 +47,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9] p-[20px] flex items-center gap-4">
+        <div  className="w-full md:w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9] p-[20px] flex items-center gap-4">
           <img src={expiriens} alt="Большой опыт" className="w-[50px] h-[50px]" />
           <div className="font-semibold">
             <h2 className="text-xl lg:text-2xl mb-2">Большой опыт</h2>
@@ -53,7 +57,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9] p-[20px] flex items-center gap-4">
+        <div  className="w-full md:w-[410px] h-[217px] border-solid border-2 border-[#D9D9D9] p-[20px] flex items-center gap-4">
           <img src={price} alt="Честные цены" className="w-[50px] h-[50px]" />
           <div className="font-semibold">
             <h2 className="text-xl lg:text-2xl mb-2">Честные цены</h2>
@@ -64,7 +68,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-    </section>
+    </motion.section>
   );
 };
 

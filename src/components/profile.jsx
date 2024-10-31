@@ -1,6 +1,7 @@
 import user from "../assets/img/user1.jpg";
 import arrow_right from "../assets/icons/arrow-2.png";
 
+import {motion} from 'framer-motion'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -63,12 +64,14 @@ const Profile = () => {
           <p className="text-2xl font-medium">Ваши заказы</p>
           <img src={arrow_right} alt="" />
         </div>
-        <a
+        <motion.a
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }} 
           href="#"
           className="w-[168px] h-[61px] bg-[#F7A539] rounded-[20px] flex items-center justify-center text-white font-bold text-xl"
         >
           Купить
-        </a>
+        </motion.a>
       </div>
       <Swiper
         className="h-[630px] pt-[40px] flex justify-center my-container pl-[20px]  md:pl-[150px]"

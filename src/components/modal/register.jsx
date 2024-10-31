@@ -38,7 +38,7 @@ const Register = ({ isOpen, onClose, onSwitchToAuth }) => {
               <input
                 type="text"
                 placeholder="Имя"
-                className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12"
+                className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12 outline-none"
               />
               <img
                 src={user_icon}
@@ -52,7 +52,7 @@ const Register = ({ isOpen, onClose, onSwitchToAuth }) => {
               <input
                 type="email"
                 placeholder="E-mail"
-                className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12"
+                className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12 outline-none"
               />
               <img
                 src={email}
@@ -66,7 +66,7 @@ const Register = ({ isOpen, onClose, onSwitchToAuth }) => {
               <input
                 type="password"
                 placeholder="Пароль"
-                className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12"
+                className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12 outline-none"
               />
               <img
                 src={password}
@@ -75,12 +75,13 @@ const Register = ({ isOpen, onClose, onSwitchToAuth }) => {
               />
             </div>
   
-            <button
+            <motion.button
+              whileHover={{scale:0.9}}
               onClick={onSwitchToAuth}
               className="mt-[30px] md:mt-[60px] w-[90%] md:w-[347px] h-[72px] rounded-[20px] bg-[#F7A539] text-2xl font-semibold"
             >
               Зарегистрироваться
-            </button>
+            </motion.button>
             <p className="font-semibold text-2xl mt-6 text-center">
               У вас{" "}
               <motion.span

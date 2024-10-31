@@ -36,7 +36,7 @@ const Auth = ({ isOpen, onClose, onSwitchToRegister }) => {
                 <input
                   type="email"
                   placeholder="E-mail"
-                  className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12"
+                  className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12 outline-none"
                 />
                 <img
                   src={mail}
@@ -49,7 +49,7 @@ const Auth = ({ isOpen, onClose, onSwitchToRegister }) => {
                 <input
                   type="password"
                   placeholder="Пароль"
-                  className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12"
+                  className="placeholder:text-white px-4 md:px-8 w-full h-[60px] rounded-[20px] bg-[#615858] pr-12 outline-none"
                 />
                 <img
                   src={password}
@@ -58,12 +58,12 @@ const Auth = ({ isOpen, onClose, onSwitchToRegister }) => {
                 />
               </div>
 
-              <a
+              <motion.a whileHover={{scale:0.9}}
                 href="\profile"
                 className="cursor-pointer flex items-center justify-center mt-[30px] md:mt-[60px] w-[90%] md:w-[221px] h-[72px] rounded-[20px] bg-[#F7A539] text-2xl font-semibold"
               >
                 Войти
-              </a>
+              </motion.a>
               <p className="font-semibold text-2xl mt-6 text-center">
                 У вас{" "}
                 <motion.span
@@ -90,9 +90,25 @@ const Auth = ({ isOpen, onClose, onSwitchToRegister }) => {
                 ?
               </p>
               <div className="mt-3 flex flex-col cursor-pointer items-center">
-                <p className="font-semibold text-2xl text-[#74A0F5]">
+                <motion.p
+                initial={{ background: "transparent", color: "#74A0F5" }}
+                whileHover={{
+                  background: [
+                    "linear-gradient(90deg, #F7A539, #74A0F5)",
+                    "linear-gradient(90deg, #74A0F5, #F7A539)",
+                    "linear-gradient(90deg, #F7A539, #74A0F5)",
+                  ],
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  transition: {
+                    duration: 2,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                  },
+                }}
+                className="font-semibold text-2xl text-[#74A0F5]">
                   Забыли пароль?
-                </p>
+                </motion.p>
                 <div className="w-[60%] md:w-[200px] h-[3px] bg-[#74A0F5]"></div>
               </div>
             </div>

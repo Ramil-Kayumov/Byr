@@ -72,7 +72,7 @@ const Admin = () => {
      
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-      <div className="m-auto md:m-0 w-[166px] h-[40px] bg-[#45FF6E] text-base font-semibold rounded-xl flex items-center justify-center text-white">
+      <div className="shadow-lg m-auto md:m-0 w-[166px] h-[40px] bg-[#45FF6E] text-base font-semibold rounded-xl flex items-center justify-center text-white">
         Оплачено
       </div>
     </div>
@@ -91,7 +91,7 @@ const Admin = () => {
        <p className="m-auto md:m-0">25 000 руб</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-      <div className="m-auto md:m-0 w-[166px] h-[40px] bg-[#FE4545] text-base font-semibold rounded-xl flex items-center justify-center text-white">
+      <div className="shadow-lg m-auto md:m-0 w-[166px] h-[40px] bg-[#FE4545] text-base font-semibold rounded-xl flex items-center justify-center text-white">
         Не оплачено
       </div>
     </div>
@@ -109,7 +109,7 @@ const Admin = () => {
        <p className="m-auto md:m-0">25 000 руб</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-      <div className="m-auto md:m-0 w-[166px] h-[40px] bg-[#FEB445] text-base font-semibold rounded-xl flex items-center justify-center text-white">
+      <div className="shadow-lg m-auto md:m-0 w-[166px] h-[40px] bg-[#FEB445] text-base font-semibold rounded-xl flex items-center justify-center text-white">
         В процессе
       </div>
     </div>
@@ -121,7 +121,7 @@ const Admin = () => {
     <Card brand={cardInfo2} />
     <motion.div
       whileHover={{ scale: 1.1 }}
-      className="cursor-pointer w-[78px] h-[78px] rounded-[10px] bg-[#033C7E] flex items-center justify-center"
+      className="cursor-pointer w-[78px] h-[78px] rounded-[10px] bg-[#033C7E] flex items-center justify-center shadow-lg"
     >
       <img src={add} alt="" />
     </motion.div>

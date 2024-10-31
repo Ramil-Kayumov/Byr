@@ -22,7 +22,7 @@ function Card(props)  {
           <p className="mb-3 font-medium w-[325px]">
           { props.brand.text }
           </p>
-          <motion.button whileHover={{scale:1.1}} className="w-[168px] h-[61px] bg-[#F7A539] text-white rounded-[20px] text-xl font-semibold">
+          <motion.button whileHover={{scale:1.1}} className="w-[168px] h-[61px] bg-[#F7A539] text-white rounded-[20px] text-xl font-semibold shadow-lg">
             Заказать
           </motion.button>
         </div>

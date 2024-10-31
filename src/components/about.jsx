@@ -4,6 +4,9 @@ import about3 from "../assets/img/about3.png";
 
 import time from "../assets/icons/time.png";
 
+import {motion} from 'framer-motion'
+
+
 const About = () => {
   return (
     <section className="my-container">
@@ -15,29 +18,45 @@ const About = () => {
     </div>
     <div className="flex flex-col gap-8 mt-16 mb-16 md:mt-20 md:mb-0 md:flex-row">
       <div className=" md:w-[608px]  grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0 m-auto ">
-        <div className=" rounded-[20px] overflow-hidden">
+        <motion.div 
+        initial={{ y: -200, opacity: 0 }} // Начальное положение и прозрачность
+        animate={{ y: 0, opacity: 1 }} // Конечное положение и полная видимость
+        transition={{ duration: 0.5 }}
+        className=" rounded-[20px] overflow-hidden">
           <img
             src={about}
             alt=""
             className="w-[250px] h-[350px] md:w-[292px] md:h-[392px]  rounded-[20px]"
           />
-        </div>
-        <div className="mt-4 md:mt-[160px]  rounded-[20px] overflow-hidden">
+        </motion.div>
+        <motion.div
+        initial={{ x: -200, opacity: 0 }} // Начальное положение и прозрачность
+        animate={{ x: 0, opacity: 1 }} // Конечное положение и полная видимость
+        transition={{ duration: 0.5 }}
+        className="mt-4 md:mt-[160px]  rounded-[20px] overflow-hidden">
           <img
             src={about2}
             alt=""
             className="w-[250px] h-[350px] md:w-[292px] md:h-[480px]  rounded-[20px]"
           />
-        </div>
-        <div className="mt-4 md:mt-[-200px] aspect-[3/4] rounded-[20px] overflow-hidden">
+        </motion.div>
+        <motion.div 
+        initial={{ y: 200, opacity: 0 }} // Начальное положение и прозрачность
+        animate={{ y: 0, opacity: 1 }} // Конечное положение и полная видимость
+        transition={{ duration: 0.5 }}
+        className="mt-4 md:mt-[-200px] aspect-[3/4] rounded-[20px] overflow-hidden">
           <img
             src={about3}
             alt=""
             className="w-[250px] h-[350px] md:w-[292px] md:h-[392px]  rounded-[20px]"
           />
-        </div>
+        </motion.div>
       </div>
-      <div className="flex-1">
+      <motion.div 
+      initial={{ x: -200, opacity: 0 }} // Начальное положение и прозрачность
+      animate={{ x: 0, opacity: 1 }} // Конечное положение и полная видимость
+      transition={{ duration: 0.5 }}
+      className="flex-1">
         <h2 className="text-3xl font-bold mb-4">НЕМНОГО О НАС</h2>
         <p className="text-base md:text-lg mb-8">
           Мы - команда профессионалов, обладающая многолетним опытом в сфере
@@ -61,7 +80,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   </section>
   );

@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion";
 
 function Card_profile(props)  {
     return (
@@ -22,9 +22,9 @@ function Card_profile(props)  {
             <p className="mb-3 font-medium w-[325px]">
             { props.brand.text }
             </p>
-            <button className="w-[168px] h-[61px] bg-[#FE4545] text-white rounded-[20px] text-xl font-semibold">
+            <motion.button whileHover={{scale:1.1}} className="w-[168px] h-[61px] bg-[#FE4545] text-white rounded-[20px] text-xl font-semibold shadow-lg">
               Удалить
-            </button>
+            </motion.button>
           </div>
         </div>
       </>

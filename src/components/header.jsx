@@ -39,10 +39,21 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+  const textVariants = {
+    initial: { opacity: 1 },
+    animate: {
+      opacity: [1, 0, 1],
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+        loop: Infinity,
+      },
+    },
+  };
 
   return (
     <>
-      <motion.header initial={{y:-60}} animate={{y:0}} transition={{transition:2}} className="h-[90px] text-black m-auto z-10">
+      <motion.header initial={{y:-60}} animate={{y:0}} transition={{transition:2}} className="h-[90px]  text-black m-auto z-10">
         <div className="my-container flex justify-between items-center pt-7">
           <div className="flex gap-6 font-semibold">
             {/* Бургер-меню для мобильных устройств */}
@@ -61,12 +72,13 @@ const Header = () => {
                   </Link>
                 ))}
                 {/* Кнопка регистрации также скрыта на мобильных устройствах */}
-                <a
+                <motion.a
+                  whileHover={{scale:1.1}}
                   onClick={handleRegisterOpen}
                   className="flex items-center justify-center p-4 border- cursor-pointer w-full text-center text-sm h-[41px] bg-[#F7A539] rounded-lg text-white"
                 >
                   Зарегистрироваться
-                </a>
+                </motion.a>
               </div>
             )}
 
@@ -82,19 +94,41 @@ const Header = () => {
             </div>
           </div>
           <Link to="/" className="font-bold text-2xl">
-          <motion.p whileHover={{scale:1.1, transition:3}}> БурИнформ</motion.p>
+          <motion.p
+          variants={textVariants}
+            initial="initial"
+            animate="animate"
+          whileHover={{scale:1.1, transition:3}}> БурИнформ</motion.p>
            
           </Link>
           <div className="font-semibold flex gap-5 items-center">
             {/* Кнопка входа всегда видима */}
-            <button onClick={handleAuthOpen}>Войти</button>
+            <motion.button  
+             initial={{ background: "transparent", color: "black" }}
+             whileHover={{
+               background: [
+                 "linear-gradient(90deg, #F7A539, #74A0F5)",
+                 "linear-gradient(90deg, #74A0F5, #F7A539)",
+                 "linear-gradient(90deg, #F7A539, #74A0F5)",
+               ],
+               delay:2,
+               WebkitBackgroundClip: "text",
+               color: "transparent",
+               transition: {
+                 duration: 2,
+                 ease: "easeInOut",
+                 repeat: Infinity,
+               },
+             }}
+            onClick={handleAuthOpen}>Войти</motion.button>
             {/* Кнопка регистрации скрыта на мобильных устройствах */}
-            <a
+            <motion.a
+            whileHover={{scale:1.1}}
               onClick={handleRegisterOpen}
               className=" md:flex hidden cursor-pointer w-[193px] text-sm h-[41px] bg-[#F7A539] rounded-lg text-white  items-center justify-center"
             >
               Зарегистрироваться
-            </a>
+            </motion.a>
           </div>
         </div>
       </motion.header>
