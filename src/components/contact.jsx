@@ -1,17 +1,18 @@
 import map from "../assets/icons/map-pin.png";
 import {motion} from 'framer-motion'
-
+import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <>
+    {/* Карта */}
   <motion.section
   initial={{  opacity: 0 }} // Начальное положение и прозрачность
   animate={{  opacity: 1 }} // Конечное положение и полная видимость
   transition={{ duration: 1 }} className="my-container">
     <div className="mt-[60px]">
-      <a className="text-[#F7A539]" href="/">
+      <Link className="text-[#F7A539]" to="/">
         Главная
-      </a>{" "}
+      </Link>{" "}
       / <span className="text-[#848484]">Контакты</span>
     </div>
     <div
@@ -73,6 +74,9 @@ const Contact = () => {
       </div>
     </div>
   </motion.section>
+
+    {/* Секция для обартной связи */}
+
   <section className="pb-5 md:h-[460px] w-full bg-[url('./assets/img/bg-2.png')] mt-[115px] mb-[60px]">
     <div className="my-container">
       <div className="flex flex-col md:flex-row justify-center pt-[74px] gap-8">
@@ -84,11 +88,11 @@ const Contact = () => {
         </div>
         <div className="flex flex-col w-full md:w-auto">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <input type="text" placeholder="Ваше Имя:" className="h-[63px] w-full md:w-[213px] rounded-[20px] pl-4" />
-            <input type="phone" placeholder="Телефон:" className="h-[63px] w-full md:w-[213px] rounded-[20px] pl-4" />
+            <input type="text" placeholder="Ваше Имя:" className="h-[63px] w-full md:w-[213px] rounded-[20px] pl-4 outline-none" />
+            <input type="phone" placeholder="Телефон:" className="h-[63px] w-full md:w-[213px] rounded-[20px] pl-4 outline-none" />
           </div>
-          <input type="email" placeholder="E-mail:" className="mt-5 h-[62px] w-full md:w-[456px] rounded-[20px] pl-4" />
-          <textarea placeholder="Комментарий" className="w-full md:w-[456px] h-[105px] rounded-[20px] pl-4 mt-5 pt-4 pr-4"></textarea>
+          <input type="email" placeholder="E-mail:" className="mt-5 h-[62px] w-full md:w-[456px] rounded-[20px] pl-4 outline-none" />
+          <textarea placeholder="Комментарий" className="w-full md:w-[456px] h-[105px] rounded-[20px] pl-4 mt-5 pt-4 pr-4 outline-none"></textarea>
           <motion.button whileHover={{scale:1.1}} className="w-full md:w-[168px] h-[61px] bg-[#F7A539] text-white rounded-[20px] mt-5 font-bold text-xl">Отправить</motion.button>
         </div>
       </div>

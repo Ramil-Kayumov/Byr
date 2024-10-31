@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 const News = () => {
   return (
     <section className="my-container news">
       <div className="mt-[60px]">
-        <a className="text-[#F7A539]" href="/">
+        <Link className="text-[#F7A539]" to="/">
           Главная
-        </a>{" "}
+        </Link>{" "}
         / <span className="text-[#848484]">Новости</span>
       </div>
-      <h2 className="font-bold text-[54px] mt-[60px]">НОВОСТИ</h2>
+      <h2 className="font-bold text-[54px] mt-3">НОВОСТИ</h2>
       <span class="pb-5 grid grid-cols-5 grid-rows-5 gap-y-[60px] gap-x-7 gap-y-15 mt-[60px]">
         <motion.div
           initial={{ y: -200, opacity: 0 }} // Начальное положение и прозрачность
           animate={{ y: 0, opacity: 1 }} // Конечное положение и полная видимость
           transition={{ duration: 0.5 }}
 
-          class="col-start-5 col-end-6 row-start-1  row-end-4 bg-gradient-1 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between "
+          class="col-start-5 col-end-6 row-start-1  row-end-4 bg-gradient-1 rounded-[20px] pt-[30px] pb-6 px-[25px] shadow-lg flex flex-col justify-between "
         >
           <div>
             <p className="text-sm text-white opacity-50 mb-3">
@@ -39,7 +39,7 @@ const News = () => {
           initial={{ y: 200, opacity: 0 }} // Начальное положение и прозрачность
           animate={{ y: 0, opacity: 1 }} // Конечное положение и полная видимость
           transition={{ duration: 0.5 }}
-          class="col-start-1 col-end-2 row-start-3 row-end-6 bg-gradient-2 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between"
+          class="col-start-1 col-end-2 row-start-3 row-end-6 bg-gradient-2 rounded-[20px] pt-[30px] pb-6 px-[25px] shadow-lg flex flex-col justify-between"
         >
           <div>
             <p className="text-sm text-white opacity-50 mb-2">
@@ -62,7 +62,7 @@ const News = () => {
           initial={{ y: 200, opacity: 0 }} // Начальное положение и прозрачность
           animate={{ y: 0, opacity: 1 }} // Конечное положение и полная видимость
           transition={{ duration: 0.5 }}
-          class="col-start-2 col-end-3 row-start-3 row-end-6 bg-gradient-3 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between"
+          class="col-start-2 col-end-3 row-start-3 row-end-6 bg-gradient-3 rounded-[20px] pt-[30px] pb-6 px-[25px] shadow-lg flex flex-col justify-between"
         >
           <div>
             <p className="text-[13px] text-white opacity-50 mb-2">
@@ -85,7 +85,7 @@ const News = () => {
           initial={{ x: -200, opacity: 0 }} // Начальное положение и прозрачность
           animate={{ x: 0, opacity: 1 }} // Конечное положение и полная видимость
           transition={{ duration: 0.5 }}
-          class="col-start-4 col-end-5 row-start-1 row-end-4 bg-gradient-0 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between"
+          class="col-start-4 col-end-5 row-start-1 row-end-4 bg-gradient-0 rounded-[20px] pt-[30px] pb-6 px-[25px] shadow-lg flex flex-col justify-between"
         >
           <div>
             <p className="text-sm text-white opacity-50 mb-3">
@@ -106,7 +106,7 @@ const News = () => {
           initial={{ x: -200, opacity: 0 }} // Начальное положение и прозрачность
           animate={{ x: 0, opacity: 1 }} // Конечное положение и полная видимость
           transition={{ duration: 0.5 }}
-          class="col-start-1 col-end-4 row-start-1 row-end-3 bg-gradient-5 h-[256px] rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between"
+          class="col-start-1 col-end-4 row-start-1 row-end-3 bg-gradient-5 h-[256px] rounded-[20px] pt-[30px] pb-6 px-[25px] shadow-lg flex flex-col justify-between"
         >
           <div>
             <p className="text-sm text-white opacity-50 mb-3">
@@ -129,7 +129,7 @@ const News = () => {
           initial={{ x: 200, opacity: 0 }} // Начальное положение и прозрачность
           animate={{ x: 0, opacity: 1 }} // Конечное положение и полная видимость
           transition={{ duration: 0.5 }}
-        class="col-start-3 col-end-6 row-start-4 row-end-6 bg-gradient-4 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between">
+        class="col-start-3 col-end-6 row-start-4 row-end-6 bg-gradient-4 rounded-[20px] pt-[30px] pb-6 px-[25px] shadow-lg flex flex-col justify-between">
           <div>
             <p className="text-sm text-white opacity-50 mb-3">
               Законодательные и регулирующие изменения

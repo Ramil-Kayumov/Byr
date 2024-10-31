@@ -5,15 +5,16 @@ import about3 from "../assets/img/about3.png";
 import time from "../assets/icons/time.png";
 
 import {motion} from 'framer-motion'
+import { Link } from "react-router-dom";
 
 
 const About = () => {
   return (
     <section className="my-container">
-    <div className="mt-10">
-      <a className="text-[#F7A539]" href="/">
+    <div className="mt-[60px]">
+      <Link className="text-[#F7A539]" to="/">
         Главная
-      </a>{" "}
+      </Link>{" "}
       / <span className="text-[#848484]">О нас</span>
     </div>
     <div className="flex flex-col gap-8 mt-16 mb-16 md:mt-20 md:mb-0 md:flex-row">

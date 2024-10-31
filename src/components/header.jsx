@@ -53,7 +53,7 @@ const Header = () => {
 
   return (
     <>
-      <motion.header initial={{y:-60}} animate={{y:0}} transition={{transition:2}} className="h-[90px]  text-black m-auto z-10">
+      <motion.header initial={{y:-60}} animate={{y:0}} transition={{transition:2}} className="h-[90px] shadow-lg  text-black m-auto z-10">
         <div className="my-container flex justify-between items-center pt-7">
           <div className="flex gap-6 font-semibold">
             {/* Бургер-меню для мобильных устройств */}

@@ -4,6 +4,7 @@ import arrow_right from "../assets/icons/arrow-2.png";
 import {motion} from 'framer-motion'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 import Card_profile from "./profileCard/card_profile";
 
@@ -44,9 +45,9 @@ const Profile = () => {
   return (
     <section className="my-container">
       <div className="mt-[60px]">
-        <a className="text-[#F7A539]" href="/admin">
+        <Link className="text-[#F7A539]" to="/admin">
           Админ панель
-        </a>{" "}
+        </Link>{" "}
         / <span className="text-[#848484]">Профиль</span>
       </div>
       <h2 className="font-bold text-[54px] mt-[60px]">Профиль</h2>

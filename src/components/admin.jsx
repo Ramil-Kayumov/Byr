@@ -1,6 +1,7 @@
 import CardAdmin from "./adminCard/card_admin";
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import add from "../assets/icons/add.png";
 import card from "../assets/img/card1.png";
 import card2 from "../assets/img/card2.png";
@@ -37,9 +38,9 @@ const Admin = () => {
   return (
    <section className="my-container">
   <div className="mt-[60px] text-center md:text-left">
-    <a className="text-[#F7A539]" href="/profile">
+    <Link className="text-[#F7A539]" to="/profile">
       Профиль
-    </a>{" "}
+    </Link>{" "}
     / <span className="text-[#848484]">Админ панель</span>
   </div>
   <h2 className="font-bold text-[32px] md:text-[54px] mt-[40px]">Заказывают</h2>
@@ -65,7 +66,7 @@ const Admin = () => {
       <p className="m-auto md:m-0">Николай</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">Бурение под сваи</p>
+       <p className="m-auto md:m-0">Геологоразведка</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
       <p className="m-auto md:m-0"> 25 000 руб</p>
@@ -85,7 +86,7 @@ const Admin = () => {
       <p className="m-auto md:m-0">Андрей</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">Геологоразведка</p>
+       <p className="m-auto md:m-0">Бурение под сваи</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
        <p className="m-auto md:m-0">1 800 руб</p>
@@ -103,7 +104,7 @@ const Admin = () => {
        <p className="m-auto md:m-0">Дарья</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">Геологоразведка</p>
+       <p className="m-auto md:m-0">Монтаж кессонов</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
        <p className="m-auto md:m-0">16 000 руб</p>
