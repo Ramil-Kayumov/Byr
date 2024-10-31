@@ -65,7 +65,7 @@ const Admin = () => {
       <p className="m-auto md:m-0">Николай</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">Геологоразведка</p>
+       <p className="m-auto md:m-0">Бурение под сваи</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
       <p className="m-auto md:m-0"> 25 000 руб</p>
@@ -82,13 +82,13 @@ const Admin = () => {
   <div className="flex flex-col md:flex-row text-[#8C8C8C] font-medium text-xl pt-4">
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
       
-      <p className="m-auto md:m-0">Николай</p>
+      <p className="m-auto md:m-0">Андрей</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
        <p className="m-auto md:m-0">Геологоразведка</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">25 000 руб</p>
+       <p className="m-auto md:m-0">1 800 руб</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
       <div className="shadow-lg m-auto md:m-0 w-[166px] h-[40px] bg-[#FE4545] text-base font-semibold rounded-xl flex items-center justify-center text-white">
@@ -100,13 +100,13 @@ const Admin = () => {
   {/* Заказ 3 */}
   <div className="flex flex-col md:flex-row text-[#8C8C8C] font-medium text-xl mt-4">
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">Николай</p>
+       <p className="m-auto md:m-0">Дарья</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
        <p className="m-auto md:m-0">Геологоразведка</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
-       <p className="m-auto md:m-0">25 000 руб</p>
+       <p className="m-auto md:m-0">16 000 руб</p>
     </div>
     <div className="flex-1 border-b-[2px] border-[#ADADAD] flex items-center py-2 text-center md:text-left">
       <div className="shadow-lg m-auto md:m-0 w-[166px] h-[40px] bg-[#FEB445] text-base font-semibold rounded-xl flex items-center justify-center text-white">
