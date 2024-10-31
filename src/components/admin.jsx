@@ -1,4 +1,4 @@
-import Card from "./home/card";
+import CardAdmin from "./adminCard/card_admin";
 
 import { motion } from "framer-motion";
 import add from "../assets/icons/add.png";
@@ -116,9 +116,9 @@ const Admin = () => {
   </div>
 
   <h2 className="font-bold text-[32px] md:text-[54px] mt-[60px]">Редактирование услуг</h2>
-  <div className=" h-[1500px] md:h-[620px] pl-[40px] pt-[35px] mt-[50px] flex flex-col md:flex-row items-center gap-5 overflow-x-auto">
-    <Card brand={cardInfo1} />
-    <Card brand={cardInfo2} />
+  <div className=" h-[1500px] md:h-[620px] pl-[40px] pt-[35px] mt-[50px] flex flex-col md:flex-row items-center gap-[100px] overflow-x-auto">
+    <CardAdmin brand={cardInfo1} />
+    <CardAdmin brand={cardInfo2} />
     <motion.div
       whileHover={{ scale: 1.1 }}
       className="cursor-pointer w-[78px] h-[78px] rounded-[10px] bg-[#033C7E] flex items-center justify-center shadow-lg"

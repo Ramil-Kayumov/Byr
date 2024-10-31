@@ -125,7 +125,11 @@ const News = () => {
             Читать
           </motion.button>
         </motion.div>
-        <div class="col-start-3 col-end-6 row-start-4 row-end-6 bg-gradient-4 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between">
+        <motion.div
+          initial={{ x: 200, opacity: 0 }} // Начальное положение и прозрачность
+          animate={{ x: 0, opacity: 1 }} // Конечное положение и полная видимость
+          transition={{ duration: 0.5 }}
+        class="col-start-3 col-end-6 row-start-4 row-end-6 bg-gradient-4 rounded-[20px] pt-[30px] pb-6 px-[25px] my-shadow flex flex-col justify-between">
           <div>
             <p className="text-sm text-white opacity-50 mb-3">
               Законодательные и регулирующие изменения
@@ -142,7 +146,7 @@ const News = () => {
           >
             Читать
           </motion.button>
-        </div>
+        </motion.div>
       </span>
     </section>
   );
